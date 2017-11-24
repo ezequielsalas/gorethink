@@ -73,9 +73,7 @@ Setting up a basic connection with RethinkDB is simple:
 [embedmd]:# (example_connect_test.go go /func ExampleConnect\(\) {/ /^}/)
 ```go
 func ExampleConnect() {
-	var err error
-
-	session, err = r.Connect(r.ConnectOpts{
+	session, err := r.Connect(r.ConnectOpts{
 		Address: url,
 	})
 	if err != nil {
@@ -95,9 +93,7 @@ To configure the connection pool `InitialCap`, `MaxOpen` and `Timeout` can be sp
 [embedmd]:# (example_connect_test.go go /func ExampleConnect_connectionPool\(\) {/ /^}/)
 ```go
 func ExampleConnect_connectionPool() {
-	var err error
-
-	session, err = r.Connect(r.ConnectOpts{
+	session, err := r.Connect(r.ConnectOpts{
 		Address:    url,
 		InitialCap: 10,
 		MaxOpen:    10,
@@ -115,9 +111,7 @@ To connect to a RethinkDB cluster which has multiple nodes you can use the follo
 [embedmd]:# (example_connect_test.go go /func ExampleConnect_cluster\(\) {/ /^}/)
 ```go
 func ExampleConnect_cluster() {
-	var err error
-
-	session, err = r.Connect(r.ConnectOpts{
+	session, err := r.Connect(r.ConnectOpts{
 		Addresses: []string{url},
 		//  Addresses: []string{url1, url2, url3, ...},
 	})
